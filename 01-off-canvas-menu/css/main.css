@@ -34,26 +34,78 @@ body {
   max-width: 70%;
 }
 
+/** 
+ * 1. hide the header off the canvas
+ */
 .header {
   background-color: var(--color-p);
   position: fixed;
+  left: -23rem; /* 1. method 1*/
   min-height: 100%;
   min-width: 23rem;
-  margin-left: -23rem;
+  transition: transform 0.3s ease-out;
+  /* transform: translateX(-23rem); 1  method 2*/
+  /* margin-left: -23rem; 1 method 3*/
 }
 
 .main {
   padding: var(--vr);
+  transition: transform 0.3s ease-out;
 }
 
+
+
+/* Method 1 */
+
+/** 
+ * 1. reset the hide 
+ * 2. push the main with the same width you gave to side bar offcanvas
+ */
 .off-canvas-is-open > .header {
-  margin-left: 0;
+   transform: translateX(23rem); /* 1 */
 }
 
 .off-canvas-is-open > .main {
-  margin-left: 0;
-  margin-left: 23rem;
+   transform: translateX(23rem); /* 2 */
 }
+
+
+
+
+/* Method 2 */
+
+/** 
+ * 1. reset the hide 
+ * 2. push the main with the same width you gave to side bar offcanvas
+ */
+.off-canvas-is-open > .header {
+  /* transform: translateX(0); /* 1 */
+}
+
+.off-canvas-is-open > .main {
+   /*transform: translateX(23rem); /* 2 */
+}
+
+
+
+
+
+/* Method 3 */
+/** 
+ * 1. reset the hide 
+ * 2. push the main with the same width you gave to side bar offcanvas
+ */
+.off-canvas-is-open > .header {
+  /* margin-left: 0;  1 */
+}
+
+.off-canvas-is-open > .main {
+   /*margin-left: 23rem; 2 */
+}
+
+
+
+
 
 
 
@@ -72,4 +124,13 @@ nav a {
   color: var(--color-light);
   font-size: var(--vr);
   padding: calc(var(--vr) / 4)
+}
+
+.menu-button {
+  cursor: pointer;
+}
+
+.menu-button > * {
+  display: block;
+  pointer-events: none;
 }
