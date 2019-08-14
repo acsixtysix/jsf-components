@@ -1,0 +1,75 @@
+:root {
+    --font-core: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --color-dark: #030303;
+    --color-mid: grey;
+    --color-light: #fafafa;
+    --color-p: #7a7913;
+    --baseline: 1.7;
+    --vr: calc(var(--baseline) * 1rem);    
+}
+
+*, 
+:after, 
+:before {
+  box-sizing: border-box;
+  overflow-wrap: break-word; 
+}
+
+html {
+  line-height: var(--baseline);
+  font-size: 1rem; 
+  font-family: var(--font-core);
+  background-color: var(--color-light);
+  color: var(--color-dark);
+}
+
+body {
+  margin: 0;
+}
+/**
+ * Component Style
+ */
+
+.page {
+  max-width: 70%;
+}
+
+.header {
+  background-color: var(--color-p);
+  position: fixed;
+  min-height: 100%;
+  min-width: 23rem;
+  margin-left: -23rem;
+}
+
+.main {
+  padding: var(--vr);
+}
+
+.off-canvas-is-open > .header {
+  margin-left: 0;
+}
+
+.off-canvas-is-open > .main {
+  margin-left: 0;
+  margin-left: 23rem;
+}
+
+
+
+nav {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+nav a {
+  display: block;
+  text-decoration: none;
+  color: var(--color-light);
+  font-size: var(--vr);
+  padding: calc(var(--vr) / 4)
+}
