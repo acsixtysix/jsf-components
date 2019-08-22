@@ -1,0 +1,49 @@
+:root {
+    --font-core: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --color-dark: #030303;
+    --color-mid: grey;
+    --color-light: #fafafa;
+    --color-p: #1a39c0;
+    --baseline: 1.7;
+    --vr: calc(var(--baseline) * 1rem);    
+}
+
+*, 
+:after, 
+:before {
+  box-sizing: border-box;
+  overflow-wrap: break-word; 
+}
+
+html {
+  line-height: var(--baseline);
+  font-size: 1rem; 
+  font-family: var(--font-core);
+  background-color: var(--color-light);
+  color: var(--color-dark);
+}
+
+/**
+ * Component Style
+ */
+
+.accordion {
+  border: 1px solid #ccc;
+  margin-bottom: 2rem; 
+}
+.accordion__header {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  display: block;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+}
+.accordion__content {
+  padding: 1rem;
+  display: none;
+}
+
+.is-open .accordion__content {
+  display: block;
+}
